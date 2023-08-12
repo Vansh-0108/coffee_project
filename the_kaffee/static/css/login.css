@@ -1,0 +1,121 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    transition: .2s linear;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#6b4b23, rgba(0, 0, 0, 0.8)), url("/images/home-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #d3ad7f;
+}
+
+h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #d3ad7f;
+    position: absolute;
+    top: 100px;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-field{
+    background: #eaeaea;
+    max-height: 65px;
+    margin: 15px 0px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+.input-field i{
+    margin-left: 15px;
+    color: #999;
+}
+
+form p{
+    font-size: 13px;
+    text-align: left;
+}
+
+form p a {
+    text-decoration: none;
+    color: #d3ad7f;
+}
+
+form p a:hover{
+    letter-spacing: 1px;
+}
+
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-field button{
+    flex-basis: 48%;
+    background: #d3ad7f;
+    text-align: center;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.btn-field button:hover{
+    letter-spacing: .1rem;
+}
+
+.input-group{
+    height: 280px;
+}
+
+.btn-field button.disable{
+    background: #eaeaea;
+    color: #555;
+}
