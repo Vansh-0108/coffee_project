@@ -19,3 +19,14 @@ class reviews(models.Model):
     review = models.TextField()
     rating = models.IntegerField()
 
+class blogs(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    heading = models.CharField(max_length=100)
+    date = models.DateField()
+    desc = models.TextField()
+
+class contact(models.Model):
+    name= models.CharField(max_length=300, unique=True)
+    email= models.EmailField()
+    number = models.CharField(max_length=13)
+

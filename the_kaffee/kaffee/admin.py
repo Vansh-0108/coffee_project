@@ -5,3 +5,5 @@ from .models import *
 
 admin.site.register(inventory)
 admin.site.register(reviews)
+admin.site.register(blogs)
+admin.site.register(contact)

@@ -1,5 +1,5 @@
 let navbar = document.querySelector('.navbar');
-
+let temp;
 document.querySelector('#menu-btn').onclick = () => {
     navbar.classList.toggle('active');
     searchForm.classList.remove('active');
@@ -21,26 +21,12 @@ document.querySelector('#cart-btn').onclick = () => {
     navbar.classList.remove('active');
     searchForm.classList.remove('active');
 }
-// document.querySelector('#add-to-cart').onclick = () => {
-//     cartItem.classList.toggle('active');
-//     navbar.classList.remove('active');
-//     searchForm.classList.remove('active');
-// }
 
 window.onscroll = () => {
     navbar.classList.remove('active');
     searchForm.classList.remove('active');
     cartItem.classList.remove('active');
 }
-
-// (function(){
-//     const cartInfo = document.querySelector('.add-to-cart');
-//     const cart = document.getElementById('cart-items-container');
-
-//     cartInfo.addEventListener('click', function(){
-//         cart.classList.toggle('active');
-//     });
-// })();
 
 (function() {
     const cartBtn = document.querySelectorAll('.add-to-cart');
@@ -49,13 +35,17 @@ window.onscroll = () => {
             // console.log(event.target);
             if(event.target.classList.contains('add-to-cart')){
                 // console.log(event.target.previousElementSibling.previousElementSibling.previousElementSibling.src);
-                const fullPath = event.target.previousElementSibling.previousElementSibling.previousElementSibling.src;
-                let pos = fullPath.indexOf("images") + 6;
-                let partialPath = fullPath.slice(pos);
+                // const fullPath = event.target.previousElementSibling.previousElementSibling.previousElementSibling.src;
+                const fullPath = event.target.parentElement.children[0].src;
+                // let pos = fullPath.indexOf("images") + 6;
+                temp = fullPath
+                console.log(fullPath);
+                // let partialPath = fullPath.slice(pos);
                 // console.log(partialPath);
 
                 const item = {};
-                item.img = `images${partialPath}`;
+                // item.img = `images${partialPath}`;
+                item.img = `${fullPath}`;
                 // console.log(item.img);
 
                 let name = event.target.previousElementSibling.previousElementSibling.textContent;
@@ -72,7 +62,7 @@ window.onscroll = () => {
 
                 cartItem.innerHTML = `
                     <span class="fas fa-times"></span>
-                    <img src="${item.img}" alt="">
+                    <img src="${fullPath}" alt="">
                     <div class="content">
                         <h3>${item.name}</h3>
                         <div class="cart-item-price" id = "cart-item-price">₹${item.price}</div>
@@ -96,11 +86,11 @@ window.onscroll = () => {
         const total = [];
         const items = document.querySelectorAll('.cart-item-price');
 
-        console.log(items);
+        // console.log(items);
 
         items.forEach(function(item){
             const str = item.textContent.slice(1);
-            console.log(str);
+            // console.log(str);
             total.push(parseFloat(str));
             
             // total.push((Number)(item.textContent));
