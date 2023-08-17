@@ -32,11 +32,22 @@
         </nav>
     
         <div class = "icons">
-            <div class = "fas fa-search" id = "search-btn"></div>
-            <div class = "fas fa-shopping-cart" id = "cart-btn"></div>
-            <p class="cart-count" id="cart-count">0</p>
-            <div class = "fa-solid fa-user" id = "user"></div>
-            <div class = "fas fa-bars" id = "menu-btn"></div>
+            <!-- <div class="iconset" id="iconset"> -->
+                <div class = "iconset fas fa-search" id = "search-btn"></div>
+                <div class = "iconset fas fa-shopping-cart" id = "cart-btn"></div>
+                <p class="cart-count" id="cart-count">0</p>
+                <div class = " iconset fas fa-bars" id = "menu-btn"></div>
+            <!-- </div> -->
+            <!-- <div class = "fa-solid fa-user" id = "user"></div>
+            <p class="logout" id="logout">Log Out</p> -->
+            <div class = "border flex accountlogout" id="accountlogout">
+                <div class = "iconset fas fa-user" id = "user"></div>
+                {% if user.is_autheticated %}
+                <a href = "/signout" class="logout" id="logout">Log Out</a>
+                {% else %}
+                <a href = "/login" class="logout" id="logout">Log In</a>
+                {%endif%}
+            </div>
         </div>
 
         <div class = "search-form">
@@ -49,38 +60,6 @@
                 <h1>Your Cart</h1>
                 <hr style="height:2px;background-color:rgb(211 173 127);">
             </div>
-            <!-- <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/1.jpg" alt="">
-                <div class="content">
-                    <h3>Cappuccino</h3>
-                    <div class="price" id = "price">₹150/-</div>
-                </div>
-            </div> -->
-            <!-- <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/2.jpg" alt="">
-                <div class="content">
-                    <h3>Americano</h3>
-                    <div class="price">₹170/-</div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/3.jpg" alt="">
-                <div class="content">
-                    <h3>Espresso</h3>
-                    <div class="price">₹180/-</div>
-                </div>
-            </div> -->
-            <!-- <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/4.jpg" alt="">
-                <div class="content">
-                    <h3>Macchiato</h3>
-                    <div class="price">₹250/-</div>
-                </div>
-            </div> -->
             <div class="cart-total-container">
                 <h5 class = "total" id = "total">total</h5>
                 <h5 class = "amount" id = "amount"><strong id="cart-total" class="cart-total">₹0.00</strong></h5>

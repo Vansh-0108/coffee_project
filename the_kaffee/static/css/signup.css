@@ -97,35 +97,15 @@ form p a:hover{
 }
 
 .btn-field button{
-    flex-basis: 46%;
+    flex-basis: 48%;
     background: #d3ad7f;
     text-align: center;
-    font-size: medium;
     color: #fff;
     height: 40px;
     border-radius: 20px;
     border: 0;
     outline: 0;
     cursor: pointer;
-}
-
-.btn-field .signup{
-    flex-basis: 46%;
-    background: #eaeaea;
-    text-align: center;
-    color: #555;
-    height: 40px;
-    margin: auto;
-    padding: 11px;
-    font-size: medium;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-}
-
-.btn-field .signup:hover{
-    letter-spacing: .1rem;
 }
 
 .btn-field button:hover{

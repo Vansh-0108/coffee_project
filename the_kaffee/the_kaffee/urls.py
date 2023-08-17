@@ -21,7 +21,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", home)
+    path("", signup, name = 'signup'),
+    path("login/", login, name = "login"),
+    path("home/", home, name = "home"),
+    path("signout/", signout, name = "signout")
 ]
 
 if settings.DEBUG:
